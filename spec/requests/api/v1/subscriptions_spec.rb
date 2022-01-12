@@ -7,8 +7,12 @@ RSpec.describe 'create subscription endpoint', type: :request do
     describe 'happy path' do
         xit 'can create a subscription', :vcr do
             body = {
-                    "subscription_id": 1,
-                    "customer_id": 1
+                    "customer_id": 1,
+                    "tea_id": 1,
+                    "title": "green tea guru",
+                    "price": 40.00,
+                    "frequency": "weekly",
+
             }
 
             headers = { 'CONTENT_TYPE': 'application/json', "Accept": 'application/json' }
