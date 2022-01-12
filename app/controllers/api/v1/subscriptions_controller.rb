@@ -1,6 +1,6 @@
 class Api::V1::SubscriptionsController < ApplicationController
   before_action :require_valid_customer
-  
+
   def index
     subscriptions = current_customer.subscriptions
     render json: SubscriptionsSerializer.new(subscriptions), status: :ok
@@ -28,7 +28,7 @@ class Api::V1::SubscriptionsController < ApplicationController
   private
 
   def current_customer
-    Customer.find(params[:customer_id])    
+    Customer.find(params[:customer_id])
   end
 
   def require_valid_customer
