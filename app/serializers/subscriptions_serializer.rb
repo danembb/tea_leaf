@@ -8,7 +8,7 @@ class SubscriptionsSerializer
           "title": subscription.title,
           "price": subscription.price,
           "frequency": subscription.frequency,
-          "status": subscription.status,
+          "status": subscription.status
         }
       }
     end
