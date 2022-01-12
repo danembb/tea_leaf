@@ -8,7 +8,7 @@ ruby '2.7.2'
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'faraday'
-gem 'fast_jsonapi'
+gem 'jsonapi-serializer'
 gem 'figaro'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'pry'

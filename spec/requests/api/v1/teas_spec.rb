@@ -57,5 +57,4 @@ RSpec.describe 'create tea endpoint', type: :request do
             expect(error[:error]).to eq("Insufficient parameters provided")
         end
     end
-
 end
