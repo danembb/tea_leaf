@@ -1,6 +1,11 @@
 <div align="center">
 
+ 
+
 # Tea Leaf
+  
+![Screen Shot 2022-01-12 at 9 40 47 AM](https://user-images.githubusercontent.com/76824096/149183202-94311648-bcda-4dee-a2a5-c23deb7009db.png)
+
 [![Contributors][contributors-shield]][contributors-url]
 [![Issues][issues-shield]][issues-url]
 [![Stargazers][stars-shield]][stars-url]
@@ -8,7 +13,7 @@
 
 ## Overview
 
-(coming soon)
+Tea leaf is a JSON API 1.0 spec-compliant REST API built in Rails with endpoints for users to subscribe a customer to a tea subscription, cancel a customer's tea subscription, and to see all of a customer's tea subscriptions (including active and cancelled). In addition, users can create customers and create teas. for purposes of exposing and consuming.
 </div>
 
 <div align="center">
@@ -20,6 +25,10 @@
 [<img src="https://img.shields.io/badge/GitHub-181717.svg?&style=flaste&logo=github&logoColor=white" />](https://github.com/danembb)
 [<img src= "https://img.shields.io/badge/in-LinkedIn-blue" />](https://www.linkedin.com/in/dane-brophy/)
 
+### Schema Design
+  
+  ![Screen Shot 2022-01-12 at 5 40 05 AM](https://user-images.githubusercontent.com/76824096/149181980-119b9ebd-6073-416c-bf2e-866e4d7b91ff.png)
+  
 ## Tools Used
 
 |Development|Development|Testing
@@ -90,17 +99,126 @@ This project requires Ruby 2.7.2.
 
 For a more responsive and enteractive response installing/using [Postman](https://www.postman.com/) will enhance the experience. For accessing these end points provided you will have to run `rails server` or `rails s` to spin up your localhost url. Then utilizing the base path of `http://localhost:3000/` the end points get supplied at the end of this url and can get the response that the front end desires depending on the type of call.
 
-- `GET /api/v1/forecast?location={location in the US}`
-  - For this endpoint it delivers the current forecast as well as the forecast for the next 8 hours as well as the next 5 days. The location can be anywhere in the U.S. as the location can be given as 'denver,co'.
-- `GET /api/v1/backgrounds?location={location in the US}`
-  - For this endpoint it responds with a list of books dependent on the integer passed into the params of the url. The book is dependent on what you pass into the location. Such as typing in 'Egypt' will get you all the books associated with Egypt. It will show the isbn number as well as the title and author.
-- `POST /api/v1/users'`
-  - This endpoint is being used a post method to register a user if they supply the correct information into the front end registration page. The information is passed through the body of the request and the params of the url due to security concerns and keeping the users information secure. That information passed is then stored in the database if all requirments are met.
-- `POST /api/v1/sessions'`
-  - This endpoint is another post method that starts a user session if they already exist in the database. The front end is sending a request to authenticate a user and similar to the registration endpoint the information is getting sent through the body to secure the user. If he user exists and authenticated the response sends the front end an api key for that users authentication.
-- `POST /api/v1/road_trip`
-  - For the last endpoint it is also a post method due to using an api key to authenticate a registed user and being able to supply whomever the information needed. The frontend is needing information for a road trip for a user which needs a origin location and a destination along with an api key. These are needed to find the best and fastest route for the user via MapQuest API. Again inforamtion is stored in the body of the response to protect users information.
+#### Create a Subscription
+- Request: `POST /api/v1/customers/:customer_id/subscriptions`
+ 
+- Response: 
+```ruby
+{
+    "data": {
+        "id": "4",
+        "type": "subscriptions",
+        "attributes": {
+            "customer_id": 1,
+            "tea_id": 1,
+            "title": "run with rooibos part 2",
+            "price": 65.0,
+            "frequency": "bimonthly",
+            "status": "active"
+        }
+    }
+}
 
+```
+
+#### Update a Subscription (Cancellation)
+- Request: `PATCH /api/v1/customers/:customer_id/subscriptions/:subscription_id`
+
+- Response:
+```ruby
+{
+    "data": {
+        "customer_id": 1,
+        "tea_id": 1,
+        "title": "green tea guru",
+        "price": 40.0,
+        "frequency": "monthly",
+        "status": "cancelled"
+    }
+}
+```
+
+#### See a Customer's Subscriptions (Active & Cancelled)
+- Request: `GET /api/v1/customers/:customer_id/subscriptions`
+
+- Response:
+```ruby
+{
+    "data": [
+        {
+            "id": "1",
+            "type": "subscriptions",
+            "attributes": {
+                "customer_id": 1,
+                "tea_id": 1,
+                "title": "green tea guru",
+                "price": 40.0,
+                "frequency": "monthly",
+                "status": "cancelled"
+            }
+        },
+        {
+            "id": "2",
+            "type": "subscriptions",
+            "attributes": {
+                "customer_id": 1,
+                "tea_id": 1,
+                "title": "run with rooibos",
+                "price": 65.0,
+                "frequency": "bimonthly",
+                "status": "active"
+            }
+        },
+        {
+            "id": "4",
+            "type": "subscriptions",
+            "attributes": {
+                "customer_id": 1,
+                "tea_id": 1,
+                "title": "run with rooibos part 2",
+                "price": 65.0,
+                "frequency": "bimonthly",
+                "status": "active"
+            }
+        }
+    ]
+}
+```
+
+#### Create a Customer
+- Request: `POST /api/v1/customers`
+
+- Response:
+```ruby
+{
+    "data": {
+        "id": 2,
+        "first_name": "dane",
+        "last_name": "brophy",
+        "email": "dbrophy@cats.biz",
+        "address": "101 Generic Drive, Ware, CO"
+    }
+}
+```
+
+#### Create a Tea
+- Request: `POST /api/v1/teas`
+
+- Response:
+```ruby
+{
+    "data": {
+        "id": 2,
+        "name": "green tea",
+        "image": "www.pixiv.com/wowgreentea",
+        "description": "a greenish hue and lovely scent",
+        "keywords": "earthy, calming",
+        "origin": "?",
+        "brew_time": 3,
+        "temperature": 92.2
+    }
+}
+```
 
 <!-- MARKDOWN LINKS & IMAGES -->
 
