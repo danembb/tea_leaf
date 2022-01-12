@@ -1,7 +1,8 @@
 class Api::V1::SubscriptionsController < ApplicationController
   def create
-    subscription = Subscription.create(cust_subscription_params)
-    if params[:customer_id].nil? || params[:subscription_id].nil?
+    subscription = Subscription.new(subscription_params)
+    binding.pry
+    if params[:title].nil? || params[:price].nil? || params[:frequency].nil?
       render json: { error: 'Invalid information provided' }, status: :bad_request
     elsif subscription.save
       render json: SubscriptionsSerializer.new(subscription), status: :created
@@ -11,6 +12,6 @@ class Api::V1::SubscriptionsController < ApplicationController
   private
 
   def subscription_params
-    params.permit(:customer_id, :subscription_id)
+    params.permit(:customer_id, :tea_id, :title, :price, :frequency, :status)
   end
 end

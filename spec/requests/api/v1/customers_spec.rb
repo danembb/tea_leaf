@@ -48,5 +48,4 @@ RSpec.describe 'create customer endpoint', type: :request do
             expect(error[:error]).to eq("Insufficient parameters provided")
         end
     end
-
 end
