@@ -6,7 +6,7 @@ RSpec.describe 'create subscription endpoint', type: :request do
         @tea = Tea.create!(name: 'Earl Grey', description: 'tea, earl grey, hot', keywords: 'picard', origin: 'a replicator', brew_time: 2, temperature: 89.7)
     end
 
-    describe 'happy path' do
+    describe 'happy paths' do
         it 'can create a subscription', :vcr do
             body = {
                     "tea_id": @tea.id,
@@ -35,7 +35,7 @@ RSpec.describe 'create subscription endpoint', type: :request do
         end
     end
 
-    describe 'sad path' do
+    describe 'sad paths' do
         it 'can provide an error if information is invalid' do
             body = {
                     "tea_id": @tea.id,
