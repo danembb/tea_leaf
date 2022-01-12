@@ -33,6 +33,32 @@ RSpec.describe 'create subscription endpoint', type: :request do
             expect(confirmation[:data][:frequency]).to eq("monthly")
             expect(confirmation[:data][:status]).to eq("active")
         end
+
+        it 'can update a subscription', :vcr do
+            guru = Subscription.create!(customer_id: @customer.id, tea_id: @tea.id, title: "green tea guru", price: 40.00, frequency: 1)
+            
+            body = {
+                "status": 1
+            }
+
+            headers = { 'CONTENT_TYPE': 'application/json', "Accept": 'application/json' }
+
+            patch "/api/v1/customers/#{@customer.id}/subscriptions/#{guru.id}", headers: headers, params: body, as: :json
+
+            expect(response).to be_successful
+            expect(response.status).to eq(200)
+
+            confirmation = JSON.parse(response.body, symbolize_names: true)
+            
+            expect(confirmation).to have_key(:data)
+            expect(confirmation[:data]).to be_a(Hash)
+            expect(confirmation[:data][:customer_id]).to eq(@customer.id)
+            expect(confirmation[:data][:tea_id]).to eq(@tea.id)
+            expect(confirmation[:data][:title]).to eq("green tea guru")
+            expect(confirmation[:data][:price]).to eq(40.00)
+            expect(confirmation[:data][:frequency]).to eq("monthly")
+            expect(confirmation[:data][:status]).to eq("cancelled")
+        end
     end
 
     describe 'sad paths' do
