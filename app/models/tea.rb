@@ -1,4 +1,4 @@
 class Tea < ApplicationRecord
-    belongs_to :subscription
-    has_many :comments
+  belongs_to :subscription
+  has_many :comments, dependent: :destroy
 end
