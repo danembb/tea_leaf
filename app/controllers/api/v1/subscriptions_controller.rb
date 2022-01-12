@@ -1,3 +1,5 @@
-class Api::v1::SubscriptionsController < ApplicationController
+class Api::V1::SubscriptionsController < ApplicationController
 
+    def create
+    end
 end
