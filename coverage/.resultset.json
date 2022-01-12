@@ -293,6 +293,7 @@
           1,
           null,
           null,
+          null,
           null
         ]
       },
@@ -317,7 +318,6 @@
           1,
           1,
           2,
-          2,
           null,
           null,
           1,
@@ -333,29 +333,8 @@
         "lines": [
           1,
           1,
-          1,
           null,
           1,
-          1,
-          1,
-          1,
-          null
-        ]
-      },
-      "/Users/heartbeat/turing/4module/projects/tea_leaf/spec/models/customer_subscription_spec.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          2,
-          2,
-          null,
-          null
-        ]
-      },
-      "/Users/heartbeat/turing/4module/projects/tea_leaf/app/models/customer_subscription.rb": {
-        "lines": [
           1,
           1,
           1,
@@ -464,18 +443,18 @@
           null,
           1,
           1,
-          1,
+          0,
           null,
           1,
-          null,
-          null,
-          null,
-          null,
-          null,
-          null,
           1,
+          0,
           null,
-          1,
+          null,
+          null,
+          null,
+          0,
+          null,
+          0,
           null,
           0,
           0,
@@ -487,7 +466,6 @@
       "/Users/heartbeat/turing/4module/projects/tea_leaf/app/controllers/api/v1/customers_controller.rb": {
         "lines": [
           1,
-          null,
           1,
           2,
           2,
@@ -529,29 +507,8 @@
           null,
           null
         ]
-      },
-      "/Users/heartbeat/turing/4module/projects/tea_leaf/app/controllers/api/v1/subscriptions_controller.rb": {
-        "lines": [
-          1,
-          null,
-          1,
-          1,
-          0,
-          0,
-          0,
-          0,
-          null,
-          null,
-          null,
-          1,
-          null,
-          1,
-          1,
-          null,
-          null
-        ]
       }
     },
-    "timestamp": 1641975499
+    "timestamp": 1641979034
   }
 }

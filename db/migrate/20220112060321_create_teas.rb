@@ -8,7 +8,6 @@ class CreateTeas < ActiveRecord::Migration[6.1]
       t.string :origin
       t.integer :brew_time
       t.float :temperature
-      t.references :subscription, null: false, foreign_key: true
 
       t.timestamps
     end
