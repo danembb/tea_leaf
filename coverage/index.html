@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-01-12T02:53:43-07:00">2022-01-12T02:53:43-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-01-12T02:55:33-07:00">2022-01-12T02:55:33-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -425,7 +425,7 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#79cd74ed659182b492c6d6f55857976ce9a25e69" class="src_link" title="spec/requests/api/v1/teas_spec.rb">spec/requests/api/v1/teas_spec.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">58</td>
+            <td class="cell--number">61</td>
             <td class="cell--number">28</td>
             <td class="cell--number">28</td>
             <td class="cell--number">0</td>
@@ -6755,7 +6755,7 @@
 
             
 
-            <code class="ruby">                    &quot;first_name&quot;: &quot;dane&quot;,</code>
+            <code class="ruby">                    &quot;name&quot;: &quot;green&quot;,</code>
           </li>
         </div>
       
@@ -6766,7 +6766,7 @@
 
             
 
-            <code class="ruby">                    &quot;last_name&quot;: &quot;brophy&quot;,</code>
+            <code class="ruby">                    &quot;image&quot;: &quot;www.pixiv.com/wowgreentea&quot;,</code>
           </li>
         </div>
       
@@ -6777,7 +6777,7 @@
 
             
 
-            <code class="ruby">                    &quot;email&quot;: &quot;dbrophy@cats.biz&quot;,</code>
+            <code class="ruby">                    &quot;keywords&quot;: &quot;earthy, calming&quot;,</code>
           </li>
         </div>
       
@@ -6788,7 +6788,7 @@
 
             
 
-            <code class="ruby">            }</code>
+            <code class="ruby">                    &quot;origin&quot;: &quot;?&quot;,</code>
           </li>
         </div>
       
@@ -6799,18 +6799,18 @@
 
             
 
-            <code class="ruby">        </code>
+            <code class="ruby">                    &quot;brew_time&quot;: 3,</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="45">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="45">
+            
             
 
             
 
-            <code class="ruby">            headers = { &#39;CONTENT_TYPE&#39;: &#39;application/json&#39;, &quot;Accept&quot;: &#39;application/json&#39; }</code>
+            <code class="ruby">                    &quot;temperature&quot;: 92.2</code>
           </li>
         </div>
       
@@ -6821,23 +6821,12 @@
 
             
 
-            <code class="ruby">        </code>
+            <code class="ruby">            }</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="47">
-            <span class="hits">1</span>
-            
-
-            
-
-            <code class="ruby">            post &#39;/api/v1/teas&#39;, headers: headers, params: body, as: :json</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="48">
+          <li class="never" data-hits="" data-linenumber="47">
             
             
 
@@ -6848,13 +6837,24 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="49">
+          <li class="covered" data-hits="1" data-linenumber="48">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">            expect(response).to_not be_successful</code>
+            <code class="ruby">            headers = { &#39;CONTENT_TYPE&#39;: &#39;application/json&#39;, &quot;Accept&quot;: &#39;application/json&#39; }</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="49">
+            
+            
+
+            
+
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -6865,7 +6865,7 @@
 
             
 
-            <code class="ruby">            expect(response.status).to eq(400)</code>
+            <code class="ruby">            post &#39;/api/v1/teas&#39;, headers: headers, params: body, as: :json</code>
           </li>
         </div>
       
@@ -6887,12 +6887,23 @@
 
             
 
-            <code class="ruby">            error = JSON.parse(response.body, symbolize_names: true)</code>
+            <code class="ruby">            expect(response).to_not be_successful</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="53">
+          <li class="covered" data-hits="1" data-linenumber="53">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">            expect(response.status).to eq(400)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="54">
             
             
 
@@ -6903,24 +6914,13 @@
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="54">
+          <li class="covered" data-hits="1" data-linenumber="55">
             <span class="hits">1</span>
             
 
             
 
-            <code class="ruby">            expect(error[:error]).to eq(&quot;Insufficient parameters provided&quot;)</code>
-          </li>
-        </div>
-      
-        <div>
-          <li class="never" data-hits="" data-linenumber="55">
-            
-            
-
-            
-
-            <code class="ruby">        end</code>
+            <code class="ruby">            error = JSON.parse(response.body, symbolize_names: true)</code>
           </li>
         </div>
       
@@ -6931,12 +6931,45 @@
 
             
 
+            <code class="ruby"></code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="covered" data-hits="1" data-linenumber="57">
+            <span class="hits">1</span>
+            
+
+            
+
+            <code class="ruby">            expect(error[:error]).to eq(&quot;Insufficient parameters provided&quot;)</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="58">
+            
+            
+
+            
+
+            <code class="ruby">        end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="59">
+            
+            
+
+            
+
             <code class="ruby">    end</code>
           </li>
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="57">
+          <li class="never" data-hits="" data-linenumber="60">
             
             
 
@@ -6947,7 +6980,7 @@
         </div>
       
         <div>
-          <li class="never" data-hits="" data-linenumber="58">
+          <li class="never" data-hits="" data-linenumber="61">
             
             
 

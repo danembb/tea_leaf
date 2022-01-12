@@ -1,5 +1,5 @@
 class Tea < ApplicationRecord
-  has_many :subscriptions
+  has_many :subscriptions, dependent: :destroy
   has_many :comments, dependent: :destroy
 
   validates :name, presence: true

@@ -28,7 +28,7 @@ RSpec.describe 'create customer endpoint', type: :request do
         end
     end
     
-    describe 'sad paths' do
+    describe 'sad path' do
         it 'can return an error if insufficient parameters are provided', :vcr do
             body = {
                     "first_name": "dane",

@@ -34,16 +34,19 @@ RSpec.describe 'create tea endpoint', type: :request do
         end
     end
     
-    describe 'sad paths' do
+    describe 'sad path' do
         it 'can return an error if insufficient parameters are provided', :vcr do
             body = {
-                    "first_name": "dane",
-                    "last_name": "brophy",
-                    "email": "dbrophy@cats.biz",
+                    "name": "green",
+                    "image": "www.pixiv.com/wowgreentea",
+                    "keywords": "earthy, calming",
+                    "origin": "?",
+                    "brew_time": 3,
+                    "temperature": 92.2
             }
-        
+
             headers = { 'CONTENT_TYPE': 'application/json', "Accept": 'application/json' }
-        
+
             post '/api/v1/teas', headers: headers, params: body, as: :json
 
             expect(response).to_not be_successful
