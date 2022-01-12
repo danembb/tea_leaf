@@ -1,4 +1,4 @@
 class Subscription < ApplicationRecord
-  has_many :customer_subscriptions, dependent: :destroy
-  has_many :customers, through: :customer_subscriptions
+  belongs_to :customer
+  belongs_to :tea
 end
