@@ -216,7 +216,7 @@
           null,
           null,
           1,
-          1,
+          2,
           null,
           null,
           null,
@@ -287,6 +287,11 @@
       "/Users/heartbeat/turing/4module/projects/tea_leaf/config/routes.rb": {
         "lines": [
           1,
+          1,
+          1,
+          1,
+          1,
+          null,
           null,
           null
         ]
@@ -314,11 +319,23 @@
           2,
           2,
           null,
+          null,
+          1,
+          2,
+          2,
+          2,
+          2,
+          null,
           null
         ]
       },
       "/Users/heartbeat/turing/4module/projects/tea_leaf/app/models/customer.rb": {
         "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
           1,
           1,
           1,
@@ -384,8 +401,157 @@
           1,
           null
         ]
+      },
+      "/Users/heartbeat/turing/4module/projects/tea_leaf/spec/requests/api/v1/customers_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/heartbeat/turing/4module/projects/tea_leaf/spec/requests/api/v1/subscriptions_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          null,
+          0,
+          0,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/heartbeat/turing/4module/projects/tea_leaf/app/controllers/api/v1/customers_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
+          null,
+          null
+        ]
+      },
+      "/Users/heartbeat/turing/4module/projects/tea_leaf/app/controllers/application_controller.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/heartbeat/turing/4module/projects/tea_leaf/app/serializers/customers_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
+      "/Users/heartbeat/turing/4module/projects/tea_leaf/app/controllers/api/v1/subscriptions_controller.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          0,
+          0,
+          0,
+          0,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          1,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1641969108
+    "timestamp": 1641975499
   }
 }
