@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe 'create subscription endpoint', type: :request do
     before :each do
         @customer = Customer.create!(first_name: 'dane', last_name: 'brophy', email: 'dbrophy@cats.biz', address: '101 Generic Lane, Ware, CO')
-        @tea = Tea.create!(name: 'Earl Grey', description: 'tea, earl grey, hot', keywords: 'picard', origin: 'a replicator', brew_time: 2, temperature: 89.7)
+        @tea = Tea.create!(name: 'green tea', description: 'so nice', keywords: 'earthy, zen', origin: 'somewhere', brew_time: 3, temperature: 90)
+        @tea2 = Tea.create!(name: 'Earl Grey', description: 'tea, earl grey, hot', keywords: 'picard', origin: 'a replicator', brew_time: 2, temperature: 89.7)
     end
 
     describe 'happy paths' do
@@ -26,12 +27,12 @@ RSpec.describe 'create subscription endpoint', type: :request do
             
             expect(confirmation).to have_key(:data)
             expect(confirmation[:data]).to be_a(Hash)
-            expect(confirmation[:data][:customer_id]).to eq(@customer.id)
-            expect(confirmation[:data][:tea_id]).to eq(@tea.id)
-            expect(confirmation[:data][:title]).to eq("green tea guru")
-            expect(confirmation[:data][:price]).to eq(40.00)
-            expect(confirmation[:data][:frequency]).to eq("monthly")
-            expect(confirmation[:data][:status]).to eq("active")
+            expect(confirmation[:data][:attributes][:customer_id]).to eq(@customer.id)
+            expect(confirmation[:data][:attributes][:tea_id]).to eq(@tea.id)
+            expect(confirmation[:data][:attributes][:title]).to eq("green tea guru")
+            expect(confirmation[:data][:attributes][:price]).to eq(40.00)
+            expect(confirmation[:data][:attributes][:frequency]).to eq("monthly")
+            expect(confirmation[:data][:attributes][:status]).to eq("active")
         end
 
         it 'can update a subscription', :vcr do
@@ -52,12 +53,29 @@ RSpec.describe 'create subscription endpoint', type: :request do
             
             expect(confirmation).to have_key(:data)
             expect(confirmation[:data]).to be_a(Hash)
-            expect(confirmation[:data][:customer_id]).to eq(@customer.id)
-            expect(confirmation[:data][:tea_id]).to eq(@tea.id)
-            expect(confirmation[:data][:title]).to eq("green tea guru")
-            expect(confirmation[:data][:price]).to eq(40.00)
-            expect(confirmation[:data][:frequency]).to eq("monthly")
-            expect(confirmation[:data][:status]).to eq("cancelled")
+            expect(confirmation[:data][:attributes][:customer_id]).to eq(@customer.id)
+            expect(confirmation[:data][:attributes][:tea_id]).to eq(@tea.id)
+            expect(confirmation[:data][:attributes][:title]).to eq("green tea guru")
+            expect(confirmation[:data][:attributes][:price]).to eq(40.00)
+            expect(confirmation[:data][:attributes][:frequency]).to eq("monthly")
+            expect(confirmation[:data][:attributes][:status]).to eq("cancelled")
+        end
+
+        it 'can return all subscriptions for a given customer' do
+            guru = Subscription.create!(customer_id: @customer.id, tea_id: @tea.id, title: "green tea guru", price: 40.00, frequency: 1)
+            picard = Subscription.create!(customer_id: @customer.id, tea_id: @tea.id, title: "the maneuver", price: 60.33, frequency: 0)
+
+            headers = { 'CONTENT_TYPE': 'application/json', "Accept": 'application/json' }
+
+            get "/api/v1/customers/#{@customer.id}/subscriptions", headers: headers, as: :json
+
+            expect(response).to be_successful
+            expect(response.status).to eq(200)
+
+            confirmation = JSON.parse(response.body, symbolize_names: true)
+            
+            expect(confirmation).to have_key(:data)
+            expect(confirmation[:data]).to be_an(Array)
         end
     end
 
