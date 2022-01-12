@@ -4,7 +4,7 @@ RSpec.describe 'create subscription endpoint', type: :request do
     describe 'happy path' do
         it 'can create a subscription', :vcr do
             body = {
-                    "title": "green tea deluxe",
+                    "subscription_id": 2,
                     "first_name": "dane",
                     "last_name": "brophy",
                     "email": "dbrophy@cats.biz",
