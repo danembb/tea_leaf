@@ -301,6 +301,18 @@
           1,
           null,
           1,
+          2,
+          2,
+          1,
+          1,
+          1,
+          null,
+          null,
+          null,
+          1,
+          null,
+          1,
+          2,
           null,
           null
         ]
@@ -330,8 +342,27 @@
           1,
           null
         ]
+      },
+      "/Users/heartbeat/turing/4module/projects/tea_leaf/app/serializers/customers_serializer.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          null,
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
       }
     },
-    "timestamp": 1641973912
+    "timestamp": 1641975146
   }
 }
