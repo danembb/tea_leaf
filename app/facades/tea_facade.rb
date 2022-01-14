@@ -1,9 +1,9 @@
 class TeaFacade
     class << self
         def one_tea(name)
-            response = TeaService.get_a_tea(name)
-        
-            Tea.new(response)
+            data = TeaService.get_a_tea(name)
+
+            TeaPoro.new(data)
         end
     end
 end
