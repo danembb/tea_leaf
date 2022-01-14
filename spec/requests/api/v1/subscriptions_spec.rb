@@ -8,7 +8,7 @@ RSpec.describe 'create subscription endpoint', type: :request do
     end
 
     describe 'happy paths' do
-        it 'can create a subscription', :vcr do
+        it 'can create a subscription' do
             body = {
                     "tea_id": @tea.id,
                     "title": "green tea guru",
@@ -35,7 +35,7 @@ RSpec.describe 'create subscription endpoint', type: :request do
             expect(confirmation[:data][:attributes][:status]).to eq("active")
         end
 
-        it 'can update a subscription', :vcr do
+        it 'can update a subscription' do
             guru = Subscription.create!(customer_id: @customer.id, tea_id: @tea.id, title: "green tea guru", price: 40.00, frequency: 1)
             
             body = {

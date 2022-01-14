@@ -14,7 +14,7 @@
       <img src="./assets/0.12.3/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" class="hide">
-      <div class="timestamp">Generated <abbr class="timeago" title="2022-01-12T05:29:32-07:00">2022-01-12T05:29:32-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2022-01-13T18:57:23-07:00">2022-01-13T18:57:23-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
@@ -43,8 +43,8 @@
   </div>
 
   <div class="t-line-summary">
-    <b>298</b> relevant lines,
-    <span class="green"><b>297</b> lines covered</span> and
+    <b>296</b> relevant lines,
+    <span class="green"><b>295</b> lines covered</span> and
     <span class="red"><b>1</b> lines missed. </span>
     (<span class="green">
   99.66%
@@ -172,9 +172,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#ad860f3a842bf6d624c9074ae34532c77a2fe632" class="src_link" title="app/serializers/customers_serializer.rb">app/serializers/customers_serializer.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">15</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">4</td>
+            <td class="cell--number">17</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">3</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -194,9 +194,9 @@
           <tr class="t-file">
             <td class="strong t-file__name"><a href="#e5be86c5c87b4912cc5c39ae657676926fee2ee6" class="src_link" title="app/serializers/teas_serializer.rb">app/serializers/teas_serializer.rb</a></td>
             <td class="green strong cell--number t-file__coverage">100.00 %</td>
-            <td class="cell--number">18</td>
-            <td class="cell--number">4</td>
-            <td class="cell--number">4</td>
+            <td class="cell--number">20</td>
+            <td class="cell--number">3</td>
+            <td class="cell--number">3</td>
             <td class="cell--number">0</td>
             <td class="cell--number">1.00</td>
             
@@ -734,7 +734,7 @@
 
             
 
-            <code class="ruby">  </code>
+            <code class="ruby"></code>
           </li>
         </div>
       
@@ -1042,7 +1042,7 @@
 
             
 
-            <code class="ruby">    Customer.find(params[:customer_id])    </code>
+            <code class="ruby">    Customer.find(params[:customer_id])</code>
           </li>
         </div>
       
@@ -2074,8 +2074,8 @@
     
 
     <div class="t-line-summary">
-      <b>4</b> relevant lines.
-      <span class="green"><b>4</b> lines covered</span> and
+      <b>3</b> relevant lines.
+      <span class="green"><b>3</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -2104,7 +2104,7 @@
 
             
 
-            <code class="ruby">  class &lt;&lt; self</code>
+            <code class="ruby">  include JSONAPI::Serializer</code>
           </li>
         </div>
       
@@ -2115,7 +2115,7 @@
 
             
 
-            <code class="ruby">    def new(customer)</code>
+            <code class="ruby">  attributes :first_name, :last_name, :email, :address</code>
           </li>
         </div>
       
@@ -2126,18 +2126,18 @@
 
             
 
-            <code class="ruby">      {</code>
+            <code class="ruby">  # class &lt;&lt; self</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="5">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="5">
+            
             
 
             
 
-            <code class="ruby">        &quot;data&quot;: {</code>
+            <code class="ruby">  #   def new(customer)</code>
           </li>
         </div>
       
@@ -2148,7 +2148,7 @@
 
             
 
-            <code class="ruby">          &quot;id&quot;: customer.id,</code>
+            <code class="ruby">  #     {</code>
           </li>
         </div>
       
@@ -2159,7 +2159,7 @@
 
             
 
-            <code class="ruby">          &quot;first_name&quot;: customer.first_name,</code>
+            <code class="ruby">  #       &quot;data&quot;: {</code>
           </li>
         </div>
       
@@ -2170,7 +2170,7 @@
 
             
 
-            <code class="ruby">          &quot;last_name&quot;: customer.last_name,</code>
+            <code class="ruby">  #         &quot;id&quot;: customer.id,</code>
           </li>
         </div>
       
@@ -2181,7 +2181,7 @@
 
             
 
-            <code class="ruby">          &quot;email&quot;: customer.email,</code>
+            <code class="ruby">  #         &quot;first_name&quot;: customer.first_name,</code>
           </li>
         </div>
       
@@ -2192,7 +2192,7 @@
 
             
 
-            <code class="ruby">          &quot;address&quot;: customer.address</code>
+            <code class="ruby">  #         &quot;last_name&quot;: customer.last_name,</code>
           </li>
         </div>
       
@@ -2203,7 +2203,7 @@
 
             
 
-            <code class="ruby">        }</code>
+            <code class="ruby">  #         &quot;email&quot;: customer.email,</code>
           </li>
         </div>
       
@@ -2214,7 +2214,7 @@
 
             
 
-            <code class="ruby">      }</code>
+            <code class="ruby">  #         &quot;address&quot;: customer.address</code>
           </li>
         </div>
       
@@ -2225,7 +2225,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">  #       }</code>
           </li>
         </div>
       
@@ -2236,12 +2236,34 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">  #     }</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="15">
+            
+            
+
+            
+
+            <code class="ruby">  #   end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="16">
+            
+            
+
+            
+
+            <code class="ruby">  # end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="17">
             
             
 
@@ -2300,7 +2322,7 @@
 
             
 
-            <code class="ruby">    include JSONAPI::Serializer</code>
+            <code class="ruby">  include JSONAPI::Serializer</code>
           </li>
         </div>
       
@@ -2311,7 +2333,7 @@
 
             
 
-            <code class="ruby">    attributes :customer_id, :tea_id, :title, :price, :frequency, :status</code>
+            <code class="ruby">  attributes :customer_id, :tea_id, :title, :price, :frequency, :status</code>
           </li>
         </div>
       
@@ -2322,7 +2344,7 @@
 
             
 
-            <code class="ruby">#   class &lt;&lt; self</code>
+            <code class="ruby">  #   class &lt;&lt; self</code>
           </li>
         </div>
       
@@ -2333,7 +2355,7 @@
 
             
 
-            <code class="ruby">#     def new(subscriptions)</code>
+            <code class="ruby">  #     def new(subscriptions)</code>
           </li>
         </div>
       
@@ -2344,7 +2366,7 @@
 
             
 
-            <code class="ruby">#       {</code>
+            <code class="ruby">  #       {</code>
           </li>
         </div>
       
@@ -2355,7 +2377,7 @@
 
             
 
-            <code class="ruby">#         &quot;data&quot;: {</code>
+            <code class="ruby">  #         &quot;data&quot;: {</code>
           </li>
         </div>
       
@@ -2366,7 +2388,7 @@
 
             
 
-            <code class="ruby">#           &quot;customer_id&quot;: subscriptions.customer_id,</code>
+            <code class="ruby">  #           &quot;customer_id&quot;: subscriptions.customer_id,</code>
           </li>
         </div>
       
@@ -2377,7 +2399,7 @@
 
             
 
-            <code class="ruby">#           &quot;tea_id&quot;: subscriptions.tea_id,</code>
+            <code class="ruby">  #           &quot;tea_id&quot;: subscriptions.tea_id,</code>
           </li>
         </div>
       
@@ -2388,7 +2410,7 @@
 
             
 
-            <code class="ruby">#           &quot;title&quot;: subscriptions.title,</code>
+            <code class="ruby">  #           &quot;title&quot;: subscriptions.title,</code>
           </li>
         </div>
       
@@ -2399,7 +2421,7 @@
 
             
 
-            <code class="ruby">#           &quot;price&quot;: subscriptions.price,</code>
+            <code class="ruby">  #           &quot;price&quot;: subscriptions.price,</code>
           </li>
         </div>
       
@@ -2410,7 +2432,7 @@
 
             
 
-            <code class="ruby">#           &quot;frequency&quot;: subscriptions.frequency,</code>
+            <code class="ruby">  #           &quot;frequency&quot;: subscriptions.frequency,</code>
           </li>
         </div>
       
@@ -2421,7 +2443,7 @@
 
             
 
-            <code class="ruby">#           &quot;status&quot;: subscriptions.status</code>
+            <code class="ruby">  #           &quot;status&quot;: subscriptions.status</code>
           </li>
         </div>
       
@@ -2432,7 +2454,7 @@
 
             
 
-            <code class="ruby">#         }</code>
+            <code class="ruby">  #         }</code>
           </li>
         </div>
       
@@ -2443,7 +2465,7 @@
 
             
 
-            <code class="ruby">#       }</code>
+            <code class="ruby">  #       }</code>
           </li>
         </div>
       
@@ -2454,7 +2476,7 @@
 
             
 
-            <code class="ruby">#     end</code>
+            <code class="ruby">  #     end</code>
           </li>
         </div>
       
@@ -2465,7 +2487,7 @@
 
             
 
-            <code class="ruby">#   end</code>
+            <code class="ruby">  #   end</code>
           </li>
         </div>
       
@@ -2499,8 +2521,8 @@
     
 
     <div class="t-line-summary">
-      <b>4</b> relevant lines.
-      <span class="green"><b>4</b> lines covered</span> and
+      <b>3</b> relevant lines.
+      <span class="green"><b>3</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
 
@@ -2529,7 +2551,7 @@
 
             
 
-            <code class="ruby">  class &lt;&lt; self</code>
+            <code class="ruby">  include JSONAPI::Serializer</code>
           </li>
         </div>
       
@@ -2540,7 +2562,7 @@
 
             
 
-            <code class="ruby">    def new(tea)</code>
+            <code class="ruby">  attributes :name, :image, :description, :keywords, :origin, :brew_time, :temperature</code>
           </li>
         </div>
       
@@ -2551,18 +2573,18 @@
 
             
 
-            <code class="ruby">      {</code>
+            <code class="ruby">  # class &lt;&lt; self</code>
           </li>
         </div>
       
         <div>
-          <li class="covered" data-hits="1" data-linenumber="5">
-            <span class="hits">1</span>
+          <li class="never" data-hits="" data-linenumber="5">
+            
             
 
             
 
-            <code class="ruby">        &quot;data&quot;: {</code>
+            <code class="ruby">  #   def new(tea)</code>
           </li>
         </div>
       
@@ -2573,7 +2595,7 @@
 
             
 
-            <code class="ruby">          &quot;id&quot;: tea.id,</code>
+            <code class="ruby">  #     {</code>
           </li>
         </div>
       
@@ -2584,7 +2606,7 @@
 
             
 
-            <code class="ruby">          &quot;name&quot;: tea.name,</code>
+            <code class="ruby">  #       &quot;data&quot;: {</code>
           </li>
         </div>
       
@@ -2595,7 +2617,7 @@
 
             
 
-            <code class="ruby">          &quot;image&quot;: tea.image,</code>
+            <code class="ruby">  #         &quot;id&quot;: tea.id,</code>
           </li>
         </div>
       
@@ -2606,7 +2628,7 @@
 
             
 
-            <code class="ruby">          &quot;description&quot;: tea.description,</code>
+            <code class="ruby">  #         &quot;name&quot;: tea.name,</code>
           </li>
         </div>
       
@@ -2617,7 +2639,7 @@
 
             
 
-            <code class="ruby">          &quot;keywords&quot;: tea.keywords,</code>
+            <code class="ruby">  #         &quot;image&quot;: tea.image,</code>
           </li>
         </div>
       
@@ -2628,7 +2650,7 @@
 
             
 
-            <code class="ruby">          &quot;origin&quot;: tea.origin,</code>
+            <code class="ruby">  #         &quot;description&quot;: tea.description,</code>
           </li>
         </div>
       
@@ -2639,7 +2661,7 @@
 
             
 
-            <code class="ruby">          &quot;brew_time&quot;: tea.brew_time,</code>
+            <code class="ruby">  #         &quot;keywords&quot;: tea.keywords,</code>
           </li>
         </div>
       
@@ -2650,7 +2672,7 @@
 
             
 
-            <code class="ruby">          &quot;temperature&quot;: tea.temperature</code>
+            <code class="ruby">  #         &quot;origin&quot;: tea.origin,</code>
           </li>
         </div>
       
@@ -2661,7 +2683,7 @@
 
             
 
-            <code class="ruby">        }</code>
+            <code class="ruby">  #         &quot;brew_time&quot;: tea.brew_time,</code>
           </li>
         </div>
       
@@ -2672,7 +2694,7 @@
 
             
 
-            <code class="ruby">      }</code>
+            <code class="ruby">  #         &quot;temperature&quot;: tea.temperature</code>
           </li>
         </div>
       
@@ -2683,7 +2705,7 @@
 
             
 
-            <code class="ruby">    end</code>
+            <code class="ruby">  #       }</code>
           </li>
         </div>
       
@@ -2694,12 +2716,34 @@
 
             
 
-            <code class="ruby">  end</code>
+            <code class="ruby">  #     }</code>
           </li>
         </div>
       
         <div>
           <li class="never" data-hits="" data-linenumber="18">
+            
+            
+
+            
+
+            <code class="ruby">  #   end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="19">
+            
+            
+
+            
+
+            <code class="ruby">  # end</code>
+          </li>
+        </div>
+      
+        <div>
+          <li class="never" data-hits="" data-linenumber="20">
             
             
 
@@ -6436,7 +6480,7 @@
 
             
 
-            <code class="ruby">        it &#39;can create a customer&#39;, :vcr do</code>
+            <code class="ruby">        it &#39;can create a customer&#39; do</code>
           </li>
         </div>
       
@@ -6645,7 +6689,7 @@
 
             
 
-            <code class="ruby">            expect(confirmation[:data][:first_name]).to eq(&quot;dane&quot;)</code>
+            <code class="ruby">            expect(confirmation[:data][:attributes][:first_name]).to eq(&quot;dane&quot;)</code>
           </li>
         </div>
       
@@ -6656,7 +6700,7 @@
 
             
 
-            <code class="ruby">            expect(confirmation[:data][:last_name]).to eq(&quot;brophy&quot;)</code>
+            <code class="ruby">            expect(confirmation[:data][:attributes][:last_name]).to eq(&quot;brophy&quot;)</code>
           </li>
         </div>
       
@@ -6667,7 +6711,7 @@
 
             
 
-            <code class="ruby">            expect(confirmation[:data][:email]).to eq(&quot;dbrophy@cats.biz&quot;)</code>
+            <code class="ruby">            expect(confirmation[:data][:attributes][:email]).to eq(&quot;dbrophy@cats.biz&quot;)</code>
           </li>
         </div>
       
@@ -6678,7 +6722,7 @@
 
             
 
-            <code class="ruby">            expect(confirmation[:data][:address]).to eq(&quot;101 Generic Drive, Ware, CO&quot;)</code>
+            <code class="ruby">            expect(confirmation[:data][:attributes][:address]).to eq(&quot;101 Generic Drive, Ware, CO&quot;)</code>
           </li>
         </div>
       
@@ -6733,7 +6777,7 @@
 
             
 
-            <code class="ruby">        it &#39;can return an error if insufficient parameters are provided&#39;, :vcr do</code>
+            <code class="ruby">        it &#39;can return an error if insufficient parameters are provided&#39; do</code>
           </li>
         </div>
       
@@ -7094,7 +7138,7 @@
 
             
 
-            <code class="ruby">        it &#39;can create a subscription&#39;, :vcr do</code>
+            <code class="ruby">        it &#39;can create a subscription&#39; do</code>
           </li>
         </div>
       
@@ -7391,7 +7435,7 @@
 
             
 
-            <code class="ruby">        it &#39;can update a subscription&#39;, :vcr do</code>
+            <code class="ruby">        it &#39;can update a subscription&#39; do</code>
           </li>
         </div>
       
@@ -8181,7 +8225,7 @@
 
             
 
-            <code class="ruby">        it &#39;can create a tea&#39;, :vcr do</code>
+            <code class="ruby">        it &#39;can create a tea&#39; do</code>
           </li>
         </div>
       
@@ -8423,7 +8467,7 @@
 
             
 
-            <code class="ruby">            expect(confirmation[:data][:name]).to eq(&quot;green&quot;)</code>
+            <code class="ruby">            expect(confirmation[:data][:attributes][:name]).to eq(&quot;green&quot;)</code>
           </li>
         </div>
       
@@ -8434,7 +8478,7 @@
 
             
 
-            <code class="ruby">            expect(confirmation[:data][:image]).to eq(&quot;www.pixiv.com/wowgreentea&quot;)</code>
+            <code class="ruby">            expect(confirmation[:data][:attributes][:image]).to eq(&quot;www.pixiv.com/wowgreentea&quot;)</code>
           </li>
         </div>
       
@@ -8445,7 +8489,7 @@
 
             
 
-            <code class="ruby">            expect(confirmation[:data][:description]).to eq(&quot;a greenish hue and lovely scent&quot;)</code>
+            <code class="ruby">            expect(confirmation[:data][:attributes][:description]).to eq(&quot;a greenish hue and lovely scent&quot;)</code>
           </li>
         </div>
       
@@ -8456,7 +8500,7 @@
 
             
 
-            <code class="ruby">            expect(confirmation[:data][:keywords]).to eq(&quot;earthy, calming&quot;)</code>
+            <code class="ruby">            expect(confirmation[:data][:attributes][:keywords]).to eq(&quot;earthy, calming&quot;)</code>
           </li>
         </div>
       
@@ -8467,7 +8511,7 @@
 
             
 
-            <code class="ruby">            expect(confirmation[:data][:origin]).to eq(&quot;?&quot;)</code>
+            <code class="ruby">            expect(confirmation[:data][:attributes][:origin]).to eq(&quot;?&quot;)</code>
           </li>
         </div>
       
@@ -8478,7 +8522,7 @@
 
             
 
-            <code class="ruby">            expect(confirmation[:data][:brew_time]).to eq(3)</code>
+            <code class="ruby">            expect(confirmation[:data][:attributes][:brew_time]).to eq(3)</code>
           </li>
         </div>
       
@@ -8489,7 +8533,7 @@
 
             
 
-            <code class="ruby">            expect(confirmation[:data][:temperature]).to eq(92.2)</code>
+            <code class="ruby">            expect(confirmation[:data][:attributes][:temperature]).to eq(92.2)</code>
           </li>
         </div>
       
@@ -8544,7 +8588,7 @@
 
             
 
-            <code class="ruby">        it &#39;can return an error if insufficient parameters are provided&#39;, :vcr do</code>
+            <code class="ruby">        it &#39;can return an error if insufficient parameters are provided&#39; do</code>
           </li>
         </div>
       
