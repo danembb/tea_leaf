@@ -101,7 +101,16 @@ For a more responsive and enteractive response installing/using [Postman](https:
 
 #### Create a Subscription
 - Request: `POST /api/v1/customers/:customer_id/subscriptions`
- 
+- Required in Body:
+```ruby
+{
+    "tea_id": 1,
+    "title": "so long oolong",
+    "price": 65.00,
+    "frequency": 1
+}
+
+```
 - Response: 
 ```ruby
 {
@@ -122,7 +131,22 @@ For a more responsive and enteractive response installing/using [Postman](https:
 ```
 
 #### Update a Subscription (Cancellation)
+With update, a user may change the `frequency` and/or `status` columns, which are coded as enums inside the subscription model
+<div align= "center">
+ 
+![Screen Shot 2022-01-14 at 9 15 23 AM](https://user-images.githubusercontent.com/76824096/149548442-fa2d3f9c-82b6-4769-ad17-f9d53c9e131c.png)
+ 
+</div>
+
 - Request: `PATCH /api/v1/customers/:customer_id/subscriptions/:subscription_id`
+- Required in body:
+
+```ruby
+{
+    "frequency": 1
+    "status": 0
+}
+```
 
 - Response:
 ```ruby
@@ -140,6 +164,7 @@ For a more responsive and enteractive response installing/using [Postman](https:
 
 #### See a Customer's Subscriptions (Active & Cancelled)
 - Request: `GET /api/v1/customers/:customer_id/subscriptions`
+
 
 - Response:
 ```ruby
@@ -187,6 +212,15 @@ For a more responsive and enteractive response installing/using [Postman](https:
 
 #### Create a Customer
 - Request: `POST /api/v1/customers`
+- Required in body:
+```ruby
+{
+    "first_name": "cat",
+    "last_name": "ishungry",
+    "email": "cat@cats.biz",
+    "address": "101 Your House Way, Littleton, CO"
+}
+```
 
 - Response:
 ```ruby
@@ -203,6 +237,18 @@ For a more responsive and enteractive response installing/using [Postman](https:
 
 #### Create a Tea
 - Request: `POST /api/v1/teas`
+- Required in body:
+```ruby
+{
+    "name": "super oolong tea party",
+    "image": "www.pixiv.com/wowgreentea",
+    "description": "a greenish hue and lovely scent",
+    "keywords": "earthy, calming",
+    "origin": "?",
+    "brew_time": 3,
+    "temperature": 92.2
+}
+```
 
 - Response:
 ```ruby
@@ -222,7 +268,7 @@ For a more responsive and enteractive response installing/using [Postman](https:
 
 #### Get a Tea (Consuming [T-API Endpoint](https://github.com/victoria-lo/TAPI))
 - Request: `GET /api/v1/teas/?name=samplename`
- - (Must include query parameter `?name`!
+ - (Must include query parameter in URI: `?name=oolong`!
 
 - Response:
 ```ruby
