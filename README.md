@@ -74,7 +74,7 @@ This project requires Ruby 2.7.2.
   * [System dependencies](https://github.com/danembb/tea_leaf/blob/main/Gemfile)
       ```bash
       $ rails -v
-      Rails 5.2.6
+      Rails 6.1.4.4
       ```
 
   * Database creation
@@ -101,7 +101,7 @@ For a more responsive and enteractive response installing/using [Postman](https:
 
 #### Create a Subscription
 - Request: `POST /api/v1/customers/:customer_id/subscriptions`
-- Required in Body:
+- Accepted in Body:
 ```ruby
 {
     "tea_id": 1,
@@ -139,7 +139,7 @@ With update, a user may change the `frequency` and/or `status` columns, which ar
 </div>
 
 - Request: `PATCH /api/v1/customers/:customer_id/subscriptions/:subscription_id`
-- Required in body:
+- Accepted in body:
 
 ```ruby
 {
@@ -212,7 +212,7 @@ With update, a user may change the `frequency` and/or `status` columns, which ar
 
 #### Create a Customer
 - Request: `POST /api/v1/customers`
-- Required in body:
+- Accepted in body:
 ```ruby
 {
     "first_name": "cat",
@@ -237,7 +237,7 @@ With update, a user may change the `frequency` and/or `status` columns, which ar
 
 #### Create a Tea
 - Request: `POST /api/v1/teas`
-- Required in body:
+- Accepted in body:
 ```ruby
 {
     "name": "super oolong tea party",
@@ -268,7 +268,7 @@ With update, a user may change the `frequency` and/or `status` columns, which ar
 
 #### Get a Tea (Consuming [T-API Endpoint](https://github.com/victoria-lo/TAPI))
 - Request: `GET /api/v1/teas/?name=samplename`
- - (Must include query parameter in URI: `?name=oolong`!
+ - (Must include query parameter in URI: `?name=oolong`!)
 
 - Response:
 ```ruby
