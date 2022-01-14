@@ -220,6 +220,28 @@ For a more responsive and enteractive response installing/using [Postman](https:
 }
 ```
 
+#### Get a Tea (Consuming [T-API Endpoint](https://github.com/victoria-lo/TAPI))
+- Request: `GET /api/v1/teas/?name=samplename`
+ - (Must include query parameter `?name`!
+
+- Response:
+```ruby
+{
+    "data": {
+        "id": "5fa3ffbbd5ba620017ec1c0f",
+        "type": "teas",
+        "attributes": {
+            "name": "oolong",
+            "image": "uploads/oolong.png",
+            "description": "Lowers risk of cancer and prevents diabetes.",
+            "keywords": "bitter, herbal, china",
+            "origin": "China",
+            "brew_time": 2,
+            "temperature": 80
+        }
+    }
+}
+```
 <!-- MARKDOWN LINKS & IMAGES -->
 
 [contributors-shield]: https://img.shields.io/github/contributors/danembb/tea_leaf.svg?style=flat-square
