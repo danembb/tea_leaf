@@ -8,7 +8,17 @@ class Api::V1::TeasController < ApplicationController
     end
   end
 
+  def index
+    if params[:name].nil?
+      render json: { error: 'Invalid name provided' }, status: :bad_request
+    elsif params[:name]
+      name = params[:name]
+      tea = TeaFacade.one_tea(name)
+      render json: TeasSerializer.new(tea), status: :ok
+    end
+  end
+
   def tea_params
-    params.permit(:name, :image, :description, :keywords, :origin, :brew_time, :temperature)
+    params.permit(:name, :image, :description, :keywords, :origin, :brew_time, :temperature, :comments)
   end
 end
